@@ -39,7 +39,8 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
    
-  <style>
+  <!-- <style>
+
     :root {
       --accent: #0d6efd;
       --bg: #f8f9fa;
@@ -125,18 +126,125 @@
     [data-theme='dark'] #projects h2 {
       color: #6366f1 !important;
     }
+  </style> -->
+
+  <style>
+    :root {
+      --accent: #0d6efd;
+      --bg: #f8f9fa;
+      --card: #fff;
+      --text: #212529;
+    }
+    [data-theme='dark'] {
+      --bg: #0b1220;
+      --card: #0f1724;
+      --text: #e6eef8;
+      --accent: #66b2ff;
+    }
+    body { background: var(--bg); color: var(--text); }
+    .navbar, .card { background: var(--card) !important; }
+    .accent { color: var(--accent) !important; }
+    .btn-accent {
+      background: linear-gradient(90deg,var(--accent), #6aa7ff);
+      color: #fff;
+      border: none;
+    }
+    .hero { min-height: 72vh; display:flex; align-items:center }
+    .project-img { width:100%; height:200px; object-fit:cover; border-radius: .5rem }
+    .theme-toggle { cursor:pointer }
+    .skill-bar { height:10px; border-radius:5px; background:rgba(0,0,0,0.1) }
+    .skill-bar > span { display:block; height:100%; border-radius:5px }
+    footer { padding:2rem 0 }
+    .nav-link.active { font-weight:600; }
+    .navbar-brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .navbar-brand div {
+      line-height: 1.1;
+    }
+    .navbar-brand small {
+      font-size: 0.8rem;
+      color: gray;
+    }
+    @media (min-width: 992px){ .project-img { height:160px } }
+    [data-theme='dark'] body,
+    [data-theme='dark'] p,
+    [data-theme='dark'] h1,
+    [data-theme='dark'] h2,
+    [data-theme='dark'] h3,
+    [data-theme='dark'] h4,
+    [data-theme='dark'] h5,
+    [data-theme='dark'] h6,
+    [data-theme='dark'] li,
+    [data-theme='dark'] a,
+    [data-theme='dark'] small,
+    [data-theme='dark'] label,
+    [data-theme='dark'] .form-label { color: var(--text) !important; }
+    [data-theme='dark'] .text-muted { color: #b0bccf !important; }
+    [data-theme='dark'] .btn-outline-secondary {
+      color: var(--text) !important;
+      border-color: #7c8595 !important;
+    }
+    [data-theme='dark'] .btn-outline-secondary:hover {
+      background-color: #1c2533 !important;
+      color: var(--accent) !important;
+    }
+    [data-theme='dark'] .navbar .nav-link { color: var(--text) !important; }
+    [data-theme='dark'] .card, [data-theme='dark'] footer { color: var(--text) !important; }
+
+    /* Project cards */
+    .project-name-card {
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid rgba(0,0,0,0.05);
+      text-align: center;
+      padding: 3rem 2rem;
+      border-radius: 1rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .project-name-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      color: var(--accent);
+    }
+    [data-theme='dark'] .project-name-card {
+      border-color: rgba(255,255,255,0.05);
+      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+    }
+    #projects h2 {
+      color: #4f46e5 !important;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+    [data-theme='dark'] #projects h2 {
+      color: #6366f1 !important;
+    }
+    .navbar-brand img {
+  width: 112px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
   </style>
 </head>
 <body data-theme="light">
   <!-- NAVBAR -->
+   <!-- NAVBAR -->
   <nav class="navbar sticky-top navbar-expand-lg shadow-sm">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-       <!-- <div class=" bg-secondary" style="width:40px;height:40px"></div> -->
-        <div>
-          <div style="line-height:1">PIYUSH MEHTA</div>
-          <small class="text-muted">Developer • Designer</small>
-        </div>
+        <img src="pmlogo.png" alt="Piyush Mehta Logo">
+        <!-- <div>
+          <div style="font-weight:600;">PIYUSH MEHTA</div>
+          <small>Developer • Designer</small>
+        </div> -->
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
@@ -157,6 +265,7 @@
       </div>
     </div>
   </nav>
+
 
   <!-- HERO -->
   <header class="hero">
